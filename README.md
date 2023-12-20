@@ -13,6 +13,8 @@ The boids follow several movement rules:
 - Fly the same direction as the flock (alignment)
 - Pursue or flee from other flocks (affinity)
 
+Based off of [this paper](https://doi.org/10.1145/37401.37406).
+
 ## Usage
 
 To run the program, create a virtual environment and install the dependencies:
