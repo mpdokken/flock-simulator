@@ -1,0 +1,90 @@
+[simulation]
+step_length = 0.05
+
+[window]
+background_color = [255, 255, 255]
+dimensions = [500, 500]
+
+[[flocks]]
+id = "rock"
+count = 50
+affinity = [["paper", -0.1], ["scissors", 0.05], ["slow", -0.03], ["fast", 0.02]]
+
+alignment = 0.2
+separation = 0.5
+cohesion = 0.1
+min_separation = 10
+max_speed = 15
+boundary_force = 50
+sight_range = 300
+color = [0, 0, 128]
+tracer.length = 10
+tracer.shade = 0.5
+tracer.enabled = true
+
+[[flocks]]
+id = "paper"
+count = 50
+affinity = [["scissors", -0.1], ["rock", 0.05], ["slow", -0.03], ["fast", 0.02]]
+
+alignment = 0.2
+separation = 0.5
+cohesion = 0.1
+min_separation = 10
+max_speed = 15
+boundary_force = 50
+sight_range = 300
+color = [0, 128, 0]
+tracer.length = 10
+tracer.shade = 0.5
+tracer.enabled = true
+
+[[flocks]]
+id = "scissors"
+count = 50
+affinity = [["rock", -0.1], ["paper", 0.05], ["slow", -0.03], ["fast", 0.02]]
+
+alignment = 0.2
+separation = 0.5
+cohesion = 0.1
+min_separation = 10
+max_speed = 15
+boundary_force = 50
+sight_range = 300
+color = [128, 0, 0]
+tracer.length = 10
+tracer.shade = 0.9
+tracer.enabled = true
+
+[[flocks]]
+id = "slow"
+count = 20
+
+alignment = 0.2
+separation = 0.4
+cohesion = 0.01
+min_separation = 30
+max_speed = 5
+boundary_force = 50
+sight_range = 300
+color = [255, 165, 0]
+tracer.length = 10
+tracer.shade = 0.9
+tracer.enabled = true
+
+[[flocks]]
+id = "fast"
+count = 2
+affinity = [["slow", 0.1]]
+
+alignment = 1
+separation = 1
+cohesion = 0.3
+min_separation = 10
+max_speed = 25
+boundary_force = 50
+sight_range = 300
+color = [160, 32, 240]
+tracer.length = 10
+tracer.shade = 0.9
+tracer.enabled = true

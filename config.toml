@@ -1,0 +1,71 @@
+[simulation]
+# The minimum amount of time for each step of the simulation to take in
+# seconds.
+step_length = 0.03
+
+[window]
+# The RGB color value of the background.
+background_color = [255, 255, 255]
+# The initial (width, height) dimensions of the window.
+dimensions = [500, 500]
+
+# Each flock is defined as an entry in the [[flocks]] array.
+[[flocks]]
+# The optional ID for the flock. This is only necessary if another flock
+# must reference this flock in its affinity list.
+id = "predator"
+# The number of boids in the flock.
+count = 10
+# A list of pairs consisting of a flock ID and an affinity value. A
+# positive affinity makes boids in this flock chase the target flock, while
+# a negative affinity makes them flee. This affinity makes the "predator"
+# flock chase the "prey" flock.
+affinity = [["prey", 0.05]]
+
+# How closely the boid's direction of movement should match its neighbors.
+alignment = 0.01
+# How strongly the boid should move away from its neighbors when they get
+# within the min_separation distance.
+separation = 0.5
+# How closely the boid should stay to the center of its neighbors.
+cohesion = 0.001
+# The minimum distance between the boid and its neighbors.
+min_separation = 10
+# The maximum possible velocity for the boid.
+max_speed = 20
+# The force applied opposite to the boid when it leaves the boundaries of
+# the window, to bring it back into view. If this value is lower than
+# forces pushing a boid out of the window, it may not return.
+boundary_force = 10
+# The boid only targets other boids within this distance to determine its
+# movement patterns, including pursuing/fleeing other flocks.
+sight_range = 300
+# The RGB color value of the boid.
+color = [128, 0, 0]
+# The number of previous locations of the boid to be included in the tracer.
+tracer.length = 10
+# A modifier of the boid's color to determine the tracer color; a value of
+# 0.5 makes the tracer 50% lighter than the boid's color.
+tracer.shade = 0.5
+# Whether to display the tracer.
+tracer.enabled = true
+
+
+[[flocks]]
+id = "prey"
+count = 10
+# The negative affinity makes the "prey" flock flee from the "predator"
+# flock.
+affinity = [["predator", -0.05]]
+
+alignment = 0.1
+separation = 0.05
+cohesion = 0.1
+min_separation = 10
+max_speed = 20
+boundary_force = 50
+sight_range = 150
+color = [0, 0, 128]
+tracer.length = 10
+tracer.shade = 0.5
+tracer.enabled = true

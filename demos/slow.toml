@@ -1,0 +1,43 @@
+[simulation]
+step_length = 0.05
+
+[window]
+background_color = [255, 255, 255]
+dimensions = [500, 500]
+
+
+[[flocks]]
+id = "predator"
+count = 3
+affinity = [["prey", 0.05]]
+
+alignment = 0.8
+separation = 0.5
+cohesion = 0.0
+min_separation = 10
+max_speed = 20
+boundary_force = 50
+sight_range = 300
+color = [0, 0, 128]
+tracer.length = 50
+tracer.shade = 0.5
+tracer.enabled = true
+
+
+[[flocks]]
+id = "prey"
+count = 250
+affinity = [["predator", -0.5]]
+
+alignment = 0.3
+separation = 0.05
+cohesion = 0.05
+min_separation = 10
+max_speed = 5
+boundary_force = 50
+sight_range = 30
+color = [128, 0, 0]
+tracer.length = 10
+tracer.shade = 0.9
+tracer.enabled = true
+
